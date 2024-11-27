@@ -475,11 +475,7 @@
   .features {
     margin-bottom: 80px;
   }
-  .features__container {
-    grid-template-columns: repeat(3, minmax(315px, 1fr));
-    grid-column-gap: 20px;
-    grid-row-gap: 50px;
-  }
+ 
   .features__content-icon {
     width: 85px;
     height: 84px;
