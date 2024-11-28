@@ -452,7 +452,6 @@
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 1014px;
     grid-template-columns: repeat(3, max(315px, 1fr));
     grid-column-gap: 20px;
     grid-row-gap: 50px;
@@ -647,9 +646,6 @@ img.work__img,
 }
 
 @media (max-width: 320px) {
-  .container {
-    max-width: 310px;
-  }
   .nav__link {
     display: none;
   }
