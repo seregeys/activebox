@@ -60,6 +60,7 @@
   min-width: 134px;
   text-transform: uppercase;
   padding: 6.5px 0 38.5px;
+  border-bottom: 3px solid transparent;
 }
 .header .nav__link:hover {
   border-bottom: 3px solid rgb(186, 187, 197);

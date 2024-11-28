@@ -79,6 +79,7 @@ $font-color: rgba(255, 255, 255, 1);
             min-width: 134px;
             text-transform: uppercase;
             padding: 6.5px 0 38.5px;
+            border-bottom: 3px solid transparent;
 
             &:hover {
                 border-bottom: 3px solid rgba(186, 187, 197, 1);
