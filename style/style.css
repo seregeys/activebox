@@ -64,10 +64,6 @@
   border-bottom: 3px solid rgb(231, 20, 20);
   color: rgb(231, 20, 20);
 }
-.header .nav__link-mobile {
-  display: none;
-  opacity: 0;
-}
 
 .banner .container {
   position: relative;
@@ -647,12 +643,13 @@ img.work__img,
   .container {
     max-width: 310px;
   }
-  .nav__link-mobile {
-    display: block;
-    opacity: 1;
-  }
   .nav__link {
     display: none;
+  }
+  .nav__link[hidden] {
+    display: block;
+    min-width: 55px;
+    height: 56px;
   }
   .banner {
     padding: 50px 0 52px;

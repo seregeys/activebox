@@ -81,10 +81,6 @@ $font-color: rgba(255, 255, 255, 1);
                 border-bottom: 3px solid rgba(231, 20, 20, 1);
                 color: rgba(231, 20, 20, 1);
             }
-            &-mobile {
-                display: none;
-                opacity: 0;
-            }
 
         }
     }
@@ -474,13 +470,12 @@ $font-color: rgba(255, 255, 255, 1);
         grid-row-gap: 50px;
     }
 
-    %features__container {  
-    }
     .nav__link {
         font-size: 12px;
         line-height: 14px;
         min-width: 112px;
         padding: 7px 0 39px;
+
     }
 
     .banner {
@@ -708,13 +703,14 @@ img.work__img,
         max-width: 310px;
     }
 
-    .nav__link-mobile {
-        display: block;
-        opacity: 1;
-    }
-
     .nav__link {
         display: none;
+    }
+
+    .nav__link[hidden] {
+        display: block;
+        min-width: 55px;
+        height: 56px;
     }
 
     .banner {
