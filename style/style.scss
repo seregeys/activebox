@@ -15,6 +15,8 @@ $font-color: rgba(255, 255, 255, 1);
     margin: 0 auto;
 }
 
+
+
 %header__container {
     position: relative;
     display: flex;
@@ -34,8 +36,13 @@ $font-color: rgba(255, 255, 255, 1);
 
 .header {
     background: url(../media/1.jpg) center / cover no-repeat;
-    position: relative;
+    position: fixed;
     padding-top: 36px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    
 
     &::before {
         content: '';

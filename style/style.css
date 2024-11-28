@@ -20,8 +20,12 @@
 
 .header {
   background: url(../media/1.jpg) center/cover no-repeat;
-  position: relative;
+  position: fixed;
   padding-top: 36px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
 }
 .header::before {
   content: "";
