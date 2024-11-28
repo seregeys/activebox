@@ -138,6 +138,7 @@ $font-color: rgba(255, 255, 255, 1);
             width: 100%;
             padding: 26px 0;
             background-color: rgba(255, 67, 67, 1);
+            cursor: pointer;
 
             &:hover {
                 background-color: rgba(231, 20, 20, 1);
@@ -392,6 +393,7 @@ $font-color: rgba(255, 255, 255, 1);
         background-color: rgba(255, 67, 67, 1);
         text-transform: uppercase;
         border: none;
+        cursor: pointer;
 
         &:hover {
             background-color: rgba(231, 20, 20, 1);

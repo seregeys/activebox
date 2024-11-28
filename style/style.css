@@ -118,6 +118,7 @@
   width: 100%;
   padding: 26px 0;
   background-color: rgb(255, 67, 67);
+  cursor: pointer;
 }
 .banner__button:hover {
   background-color: rgb(231, 20, 20);
@@ -373,6 +374,7 @@
   background-color: rgb(255, 67, 67);
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
 }
 .download__button:hover {
   background-color: rgb(231, 20, 20);
