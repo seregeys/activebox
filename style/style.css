@@ -19,7 +19,6 @@
 }
 
 .header {
-  background: url(../media/1.jpg) center/cover no-repeat;
   position: fixed;
   padding-top: 36px;
   top: 0;
@@ -27,27 +26,12 @@
   z-index: 1;
   width: 100%;
 }
-.header::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(37, 43, 73);
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 80%;
-}
 .header__logo {
   width: 183px;
-  height: 25px;
   display: flex;
-  margin-bottom: 36px;
 }
 .header .nav {
   display: flex;
-  justify-content: space-between;
-  flex-direction: inherit;
 }
 .header .nav__link {
   font-size: 13px;
@@ -59,7 +43,7 @@
   text-decoration: none;
   min-width: 134px;
   text-transform: uppercase;
-  padding: 6.5px 0 38.5px;
+  padding: 36px 0 38.5px;
   border-bottom: 3px solid transparent;
 }
 .header .nav__link:hover {
@@ -78,7 +62,7 @@
 .banner {
   background: url(../media/1.jpg) center/cover no-repeat;
   position: relative;
-  padding: 130px 0 120px;
+  padding: 237px 0 120px;
   margin-bottom: 116px;
 }
 .banner::before {
@@ -94,11 +78,13 @@
 }
 .banner__title {
   font-size: 64px;
-  line-height: -75px;
+  line-height: 75px;
   font-weight: 900;
   color: rgb(255, 255, 255);
   font-family: "Raleway", sans-serif;
   margin-bottom: 31px;
+  text-transform: uppercase;
+  width: 1170px;
 }
 .banner__text {
   font-size: 24px;
@@ -119,6 +105,8 @@
   padding: 26px 0;
   background-color: rgb(255, 67, 67);
   cursor: pointer;
+  border: none;
+  text-transform: uppercase;
 }
 .banner__button:hover {
   background-color: rgb(231, 20, 20);
@@ -130,7 +118,7 @@
 
 .features .container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(279px, 370px));
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 2fr);
   grid-column-gap: 31px;
   grid-row-gap: 88px;
@@ -147,6 +135,8 @@
   height: 100px;
   display: flex;
   margin: 0 auto 29px;
+  align-items: center;
+  justify-content: center;
 }
 .features__content-text {
   font-size: 24px;
@@ -154,7 +144,6 @@
   font-weight: 900;
   color: rgb(45, 48, 51);
   font-family: "Raleway", sans-serif;
-  padding: 22px 0;
   margin-bottom: 20px;
 }
 .features__content-desc {
@@ -169,6 +158,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 114px;
+  gap: 2px;
 }
 .work__wrapper-img {
   position: relative;
@@ -507,25 +497,14 @@
     line-height: 16px;
   }
 }
-.work {
-  grid-template-columns: 256px 256px 256px 256px;
-  grid-template-rows: 230px 230px;
-}
 .work__overlay-text {
   font-size: 18px;
   line-height: 21px;
-  padding: 9.5px 0;
   margin-bottom: 13px;
 }
 .work__overlay-text-desc {
   font-size: 14px;
   line-height: 16px;
-}
-
-img.work__img,
-.work__overlay {
-  width: 256px;
-  height: 230px;
 }
 
 .team {
