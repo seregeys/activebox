@@ -108,7 +108,7 @@ $font-color: rgba(255, 255, 255, 1);
         @include font(64px, 75px, 900, $font-color, $font-title);
         margin-bottom: 31px;
         text-transform: uppercase;
-        width: 1170px;
+        max-width: 1170px;
         }
 
     &__text {
@@ -689,6 +689,9 @@ $font-color: rgba(255, 255, 255, 1);
 
 @media (max-width: 769px) {
 
+    .header {
+        padding: 0;
+    }
     .header .nav__link {
         min-width: 110px;
     }
@@ -1283,7 +1286,7 @@ $font-color: rgba(255, 255, 255, 1);
     }
 
     %features__container {
-        grid-template-columns: repeat(1, minmax(279px, 1fr));
+        grid-template-columns: repeat(1, 1fr);
         grid-row-gap: 41px;
     }
 
