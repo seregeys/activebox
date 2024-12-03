@@ -112,8 +112,8 @@ $font-color: rgba(255, 255, 255, 1);
 
     &__text {
         @include font(24px, 28px, 400, $font-color, $font-title);
-        margin-bottom: 80px;
-        max-width: 1170px;
+        margin: 0 auto 80px;
+        max-width: 1030px;
         }
 
     &__button {
@@ -208,7 +208,6 @@ $font-color: rgba(255, 255, 255, 1);
         justify-content: center; 
         align-items: center; 
         opacity: 0; 
-        border: 2px solid rgba(255, 255, 255, 1);
         padding: 10px;
 
         &-text {
