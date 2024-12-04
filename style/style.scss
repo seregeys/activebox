@@ -238,6 +238,7 @@ $font-color: rgba(255, 255, 255, 1);
 %team__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
 }
 
 .team {
@@ -245,10 +246,6 @@ $font-color: rgba(255, 255, 255, 1);
 
     .container {
         @extend %team__container;
-    }
-
-    &__content {
-        max-width: 270px;
     }
 
     &__wrapper-img {
@@ -286,6 +283,14 @@ $font-color: rgba(255, 255, 255, 1);
     &__icons {
         display: flex;
         column-gap: 6px;
+
+        &:hover{
+            stroke: #EC7979;
+        }
+        
+        &:active{
+            stroke: #AB4949;
+        }
     }
 
     &__icon {
@@ -298,6 +303,7 @@ $font-color: rgba(255, 255, 255, 1);
 
         &:hover path{
             fill: #EC7979;
+            stroke: #EC7979;
         }
         
         &:active path{
@@ -307,20 +313,13 @@ $font-color: rgba(255, 255, 255, 1);
 }
 
 
-%designer__container {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(92, 50, 73, 1);
-    padding: 0;
-    margin-bottom: 31px;
-}
-
 
 .designer {
     margin: 0 auto 114px;
 
-    .container {
-        @extend %designer__container;
+    &__container {
+        display: flex;
+        background-color: rgba(92, 50, 73, 1);
     }
 
     &__wrapper-img {
@@ -337,18 +336,23 @@ $font-color: rgba(255, 255, 255, 1);
     &__content {
         width: 50%;
         padding: 10px 10px 10px 129px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__text {
         @include font(36px, 48px, 400, $font-color, $font-text);
         font-style: italic;
         text-transform: capitalize;
-        margin-bottom: 19px
+        margin-bottom: 19px;
+        max-width: 471px;
     }
 
     &__desc {
         @include font(13px, 15px, 700, $font-color, $font-title);
         text-transform: uppercase;
+        max-width: 470px;
     }
 
     }
@@ -414,7 +418,7 @@ $font-color: rgba(255, 255, 255, 1);
         text-align: center;
         @include font(18px, 21px, 700, $font-color, $font-title);
         text-transform: uppercase;
-        margin-bottom: 49px;
+        margin-bottom: 29px;
     }
 
     &__text {
@@ -426,6 +430,7 @@ $font-color: rgba(255, 255, 255, 1);
         display: flex;
         column-gap: 27px;
         justify-content: center;
+        margin-top: 49px;
     }
 
     &__icon {
@@ -440,15 +445,23 @@ $font-color: rgba(255, 255, 255, 1);
     &__copyright {
         background-color: rgba(44, 49, 84, 1);
         padding: 24px 0;
+
     }
 
     &__copyright_text {
         @include font(18px, 21px, 400, rgba(108, 114, 121, 1), $font-title);
         text-align: center;
+        max-width: 370px;
+        text-transform: capitalize;
     }
 
     &__copyright_desc {
         color: rgba(255, 255, 255, 1);
+    }
+
+    .copyright__container {
+        display: flex;
+        justify-content: center;
     }
 
 }
