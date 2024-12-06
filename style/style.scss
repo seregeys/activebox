@@ -361,7 +361,36 @@ $font-color: rgba(255, 255, 255, 1);
         max-width: 470px;
     }
 
+    .swiper {
+        padding-bottom: 45px;
     }
+
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 0;
+    }
+
+    .swiper-pagination {
+        display: flex;
+        column-gap: 25px;
+        justify-content: center;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+
+    .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+        border: 1px solid rgba(126, 93, 111, 1);
+        background-color: transparent;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: rgba(126, 93, 111, 1);
+    }
+}
 
 
 %download__container {
@@ -405,6 +434,7 @@ $font-color: rgba(255, 255, 255, 1);
             background-color: rgba(255, 67, 67, 1);
         }
     }
+
 }
 
 %footer__container {

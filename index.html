@@ -6,7 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="style/style.css">
     <title>HW9</title>
 </head>
 <body>
@@ -287,15 +290,60 @@
         </div>
     </div>
     <div class="designer">
-        <div class="designer__container">
-            <div class="designer__wrapper-img">
-                <img class="designer__tab-img" src="./media/14.png" alt="designer">
+        <div class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide designer__container">
+                <div class="designer__wrapper-img">
+                    <img class="designer__tab-img" src="./media/14.png" alt="designer">
+                </div>
+                <div class="designer__content">
+                    <p class="designer__text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</p>
+                    <p class="designer__desc">Susan Sims, Interaction Designer at XYZ</p>
+                </div>
+              </div>
+              <div class="swiper-slide designer__container">
+                <div class="designer__wrapper-img">
+                    <img class="designer__tab-img" src="./media/14.png" alt="designer">
+                </div>
+                <div class="designer__content">
+                    <p class="designer__text">“slide 2”</p>
+                    <p class="designer__desc">slide 2 text</p>
+                </div>
+              </div>
+              <div class="swiper-slide designer__container">
+                <div class="designer__wrapper-img">
+                    <img class="designer__tab-img" src="./media/14.png" alt="designer">
+                </div>
+                <div class="designer__content">
+                    <p class="designer__text">“slide 3”</p>
+                    <p class="designer__desc">slide 3 text</p>
+                </div>
+              </div>
+              <div class="swiper-slide designer__container">
+                <div class="designer__wrapper-img">
+                    <img class="designer__tab-img" src="./media/14.png" alt="designer">
+                </div>
+                <div class="designer__content">
+                    <p class="designer__text">“slide 4”</p>
+                    <p class="designer__desc">slide 4 text</p>
+                </div>
+              </div>
+              <div class="swiper-slide designer__container">
+                <div class="designer__wrapper-img">
+                    <img class="designer__tab-img" src="./media/14.png" alt="designer">
+                </div>
+                <div class="designer__content">
+                    <p class="designer__text">“slide 5”</p>
+                    <p class="designer__desc">slide 5 text</p>
+                </div>
+              </div>
             </div>
-            <div class="designer__content">
-                <p class="designer__text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</p>
-                <p class="designer__desc">Susan Sims, Interaction Designer at XYZ</p>
-            </div>
-        </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination">
+            </div> 
+          </div>
     </div>
     <section class="download">
         <div class="container download__container">
@@ -338,9 +386,22 @@
         </div>
         <div class="footer__copyright">
             <div class="copyright__container">
-            <p class="footer__copyright_text">Copyright © 2015 ActiveBox. All Rights Reserved Made with <span class="footer__copyright_desc"> By Kamal Chaneman</span></p>
+            <p class="footer__copyright_text">Copyright © 2015 ActiveBox.  All Rights Reserved Made with <span class="footer__copyright_desc"> By Kamal Chaneman</span></p>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
 </body>
 </html>
