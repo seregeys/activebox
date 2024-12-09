@@ -193,7 +193,7 @@ $font-color: rgba(255, 255, 255, 1);
     &__img{
 		object-fit: cover;		
 		width: 100%;
-		height: 103%;
+		height: 100%;
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -288,13 +288,6 @@ $font-color: rgba(255, 255, 255, 1);
         column-gap: 6px;
         transition: all 0.3s ease 0.3s;
 
-        &:hover{
-            stroke: #EC7979;
-        }
-        
-        &:active{
-            stroke: #AB4949;
-        }
     }
 
     &__icon {
@@ -309,11 +302,12 @@ $font-color: rgba(255, 255, 255, 1);
 
         &:hover path{
             fill: #EC7979;
-            stroke: #EC7979;
+            background-color: #EC7979;
         }
         
         &:active path{
             fill: #AB4949;
+            background-color: #AB4949;
         }
     }
 }
@@ -518,15 +512,16 @@ $font-color: rgba(255, 255, 255, 1);
     }
 
     .copyright__container {
-        display: flex;
-        justify-content: center;
+        max-width: 390px;
+        margin: 0 auto;
+        padding: 0 15px;
     }
 }
 
 
 
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
     .header__logo {
         min-width: 193px;
         display: flex;
@@ -553,7 +548,7 @@ $font-color: rgba(255, 255, 255, 1);
         &__text {
             font-size: 18px;
             line-height: 24px;
-            margin: 0px 110px 88px;
+            margin-bottom: 48px;
         }
 
         &__button {
@@ -685,7 +680,7 @@ $font-color: rgba(255, 255, 255, 1);
 
     .footer .container {
         grid-gap: 20px;
-        padding: 41px 0;
+        padding: 41px 10px;
     }
 
     .footer {
@@ -725,13 +720,15 @@ $font-color: rgba(255, 255, 255, 1);
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
 
     .header {
-        padding: 0;
+        padding: 10px 0;
     }
     .header .nav__link {
-        min-width: 110px;
+        padding: 0;
+        min-width: max-content;
+        border: none;
     }
 
     .banner {
@@ -747,7 +744,6 @@ $font-color: rgba(255, 255, 255, 1);
         &__text {
             font-size: 14px;
             line-height: 16px;
-            margin-bottom: 49px;
         }
 
         &__button {
@@ -758,7 +754,7 @@ $font-color: rgba(255, 255, 255, 1);
     }
 
     %features__container {
-        grid-template-columns: repeat(2, minmax(279px, 1fr));
+        grid-template-columns: repeat(1, minmax(279px, 1fr));
         grid-row-gap: 41px;
     }
 
@@ -772,8 +768,7 @@ $font-color: rgba(255, 255, 255, 1);
         }
 
         &__content-text {
-            padding: 16px 0;
-            margin: 0;
+            margin-bottom: 16px;
         }
     }
 
@@ -909,13 +904,12 @@ $font-color: rgba(255, 255, 255, 1);
 
     .nav__link[hidden] {
         display: block;
-        min-width: 55px;
-        height: 56px;
+        padding: 0;
+        min-width: max-content;
+        border: none;
     }
 
     .banner {
-        padding: 97px 0 52px;
-        margin-bottom: 40px;
 
         &__title {
             font-size: 24px;
@@ -923,22 +917,6 @@ $font-color: rgba(255, 255, 255, 1);
             margin-bottom: 32px;
         }
 
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-            margin-bottom: 49px;
-        }
-
-        &__button {
-            max-width: 280px;
-            padding: 16px 0;
-        }
-
-    }
-
-    %features__container {
-        grid-template-columns: repeat(1, minmax(279px, 1fr));
-        grid-row-gap: 41px;
     }
 
     .features {
@@ -1090,15 +1068,8 @@ $font-color: rgba(255, 255, 255, 1);
         display: none;
     }
 
-    .nav__link[hidden] {
-        display: block;
-        min-width: 55px;
-        height: 56px;
-    }
 
     .banner {
-        padding: 97px 0 52px;
-        margin-bottom: 40px;
 
         &__title {
             font-size: 24px;
@@ -1106,22 +1077,6 @@ $font-color: rgba(255, 255, 255, 1);
             margin-bottom: 32px;
         }
 
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-            margin-bottom: 49px;
-        }
-
-        &__button {
-            max-width: 280px;
-            padding: 16px 0;
-        }
-
-    }
-
-    %features__container {
-        grid-template-columns: repeat(1, minmax(279px, 1fr));
-        grid-row-gap: 41px;
     }
 
     .features {
@@ -1292,15 +1247,7 @@ $font-color: rgba(255, 255, 255, 1);
         display: none;
     }
 
-    .nav__link[hidden] {
-        display: block;
-        min-width: 55px;
-        height: 56px;
-    }
-
     .banner {
-        padding: 107px 0 52px;
-        margin-bottom: 40px;
 
         &__title {
             font-size: 36px;
@@ -1308,22 +1255,11 @@ $font-color: rgba(255, 255, 255, 1);
             margin-bottom: 32px;
         }
 
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-            margin: 0px 11px 48px;
-        }
-
         &__button {
-            max-width: 280px;
+            max-width: 100%;
             padding: 16px 0;
         }
 
-    }
-
-    %features__container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-row-gap: 41px;
     }
 
     .features {
