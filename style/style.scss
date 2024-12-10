@@ -464,13 +464,6 @@ $font-color: rgba(255, 255, 255, 1);
         margin-top: 49px;
         transition: all 0.3s ease 0.3s;
 
-        &:hover{
-            stroke: #EC7979;
-        }
-        
-        &:active{
-            stroke: #AB4949;
-    }
 }
 
     &__icon {
@@ -482,14 +475,14 @@ $font-color: rgba(255, 255, 255, 1);
         border: 1px solid rgba(198, 203, 205, 1);
         transition: all 0.3s ease 0.3s;
 
-
         &:hover path{
             fill: #EC7979;
-            stroke: #EC7979;
+            background-color: #EC7979;
         }
         
         &:active path{
             fill: #AB4949;
+            background-color: #AB4949;
         }
     }
 

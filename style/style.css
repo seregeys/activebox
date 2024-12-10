@@ -441,12 +441,6 @@
   margin-top: 49px;
   transition: all 0.3s ease 0.3s;
 }
-.footer__icons:hover {
-  stroke: #EC7979;
-}
-.footer__icons:active {
-  stroke: #AB4949;
-}
 .footer__icon {
   width: 39px;
   height: 39px;
@@ -458,10 +452,11 @@
 }
 .footer__icon:hover path {
   fill: #EC7979;
-  stroke: #EC7979;
+  background-color: #EC7979;
 }
 .footer__icon:active path {
   fill: #AB4949;
+  background-color: #AB4949;
 }
 .footer__copyright {
   background-color: rgb(44, 49, 84);
