@@ -840,6 +840,15 @@
   .team .container {
     display: block;
   }
+  .footer .container {
+    display: block;
+  }
+  .footer__content {
+    margin-bottom: 70px;
+  }
+  .footer__content:last-child {
+    margin: 0;
+  }
   .designer {
     margin-bottom: 34.5px;
   }

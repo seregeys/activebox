@@ -978,6 +978,18 @@ $font-color: rgba(255, 255, 255, 1);
         display: block;
     }
 
+    %footer__container {
+        display: block;
+    }
+
+    .footer__content {
+        margin-bottom: 70px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
     .designer {
         margin-bottom: 34.5px;
 
