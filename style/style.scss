@@ -23,6 +23,10 @@ $font-color: rgba(255, 255, 255, 1);
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(186, 187, 197, 1);
+
+    @media (max-width: 767px) {
+        border: none;
+    }
 }
 
 @mixin font($font-size, $line-height, $font-weight, $color, $font-family)
@@ -41,17 +45,48 @@ $font-color: rgba(255, 255, 255, 1);
     z-index: 1;
     width: 100%;
 
+    @media (max-width: 767px) {
+        padding: 10px 0;
+    }
+
         .container {
             @extend %header__container;
         }
 
+        &__logo svg {
+            @media (max-width: 1024px) {
+            width: 100%;
+            }
+
+            @media (max-width: 321px) {
+                max-width: 60%;
+            }
+        }
+    }
+
     &__logo {
         width: 183px;
         display: flex;
+
+        @media (max-width: 1024px) {
+            min-width: 193px;
+            display: flex;
+        }
     }
 
     .nav {
         display: flex;
+
+        a.nav__link.nav__link-menu {
+            padding: 0;
+            min-width: max-content;
+            border: none;
+            display: none;
+
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
 
         &__link {
             @include font(13px, 15px, 700, $font-color, $font-title);
@@ -72,10 +107,20 @@ $font-color: rgba(255, 255, 255, 1);
                 color: rgba(231, 20, 20, 1);
             }
 
+            @media (max-width: 1024px) {
+                min-width: 112px;
+                padding: 44px 4px 38.5px;
+            }
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+
+            @media (max-width: 321px) {
+                display: none;
+            }
         }
     }
-
-}
 
 %banner__container {
     position: relative;
@@ -87,6 +132,15 @@ $font-color: rgba(255, 255, 255, 1);
     position: relative;
     padding: 230px 0 120px;
     margin-bottom: 116px;
+
+    @media (max-width: 1024px) {
+        padding: 246px 0 85px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 98px 0 52px;
+        margin-bottom: 40px;
+    }
 
     &::before {
         content: '';
@@ -109,13 +163,42 @@ $font-color: rgba(255, 255, 255, 1);
         margin-bottom: 31px;
         text-transform: uppercase;
         max-width: 1170px;
+
+        @media (max-width: 1024px) {
+            font-size: 48px;
+            line-height: 67px;
+            margin-bottom: 47px;
+        }        
+
+        @media (max-width: 767px) {
+            font-size: 24px;
+            line-height: 42px;
+            margin-bottom: 32px;
         }
+
+        @media (max-width: 321px) {
+            font-size: 36px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+    }
 
     &__text {
         @include font(24px, 28px, 400, $font-color, $font-title);
         margin: 0 auto 80px;
         max-width: 1030px;
+
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 48px;
         }
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            line-height: 16px;      
+        }
+    }
 
     &__button {
         @include font(24px, 28px, 900, $font-color, $font-title);
@@ -127,6 +210,20 @@ $font-color: rgba(255, 255, 255, 1);
             border: none;
             text-transform: uppercase;
             transition: all 0.3s ease 0.3s;
+
+            @media (max-width: 1024px) {
+                max-width: 315px;
+            }
+
+            @media (max-width: 767px) {
+                max-width: 100%;
+                padding: 16px 0;
+            }
+
+            @media (max-width: 321px) {
+                max-width: 100%;
+                padding: 16px 0;
+            }
 
             &:hover {
                 background-color: rgba(231, 20, 20, 1);
@@ -144,10 +241,32 @@ $font-color: rgba(255, 255, 255, 1);
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 31px;
     grid-row-gap: 88px;
+
+    @media (max-width: 1024px) {
+        grid-column-gap: 20px;
+        grid-row-gap: 50px;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 41px;
+    }
 }
 
 .features {
     margin-bottom: 135px;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 35px;
+    }
+
+    @media (max-width: 321px) {
+        margin-bottom: 88px;
+    }
 
     .container {
         @extend %features__container;
@@ -163,27 +282,78 @@ $font-color: rgba(255, 255, 255, 1);
             margin: 0 auto 47px;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: 1024px) {
+                width: 85px;
+                height: 85px;
+            }
+
+            @media (max-width: 767px) {
+                width: 75px;
+                height: 74px;
+                margin: 0 auto 22px;
+            }
+
+            @media (max-width: 321px) {
+                width: 75px;
+                height: 75px;
+                margin: 0 auto 22px;
+            }
         }
 
         &-text {
             @include font (24px, 28px, 900, rgba(45, 48, 51, 1), $font-title);
             margin-bottom: 47px;
             text-transform: uppercase;
+
+            @media (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 21px;
+            }
+
+            @media (max-width: 767px) {
+                margin-bottom: 16px;
+            }
+
+            @media (max-width: 321px) {
+                padding: 16px 0;
+                margin: 0;
+            }
         }
 
         &-desc {
             @include font(18px, 21px, 400, rgba(108, 114, 121, 1), $font-title);
+   
+            @media (max-width: 1024px) {
+                font-size: 14px;
+                line-height: 16px;
         }
     }
     
 }
-
+}
 
 .work {
     display: grid;
 	grid-template-columns: repeat(4, 1fr);
     margin-bottom: 127px;
     gap: 2px;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 88px;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 35px;
+    }
+
+    @media (max-width: 321px) {
+        grid-template-columns: 160px 160px;
+        grid-template-rows: 144px 144px;
+        margin-bottom: 35px;
+    }
 
     &__wrapper-img {
         position: relative;
@@ -198,6 +368,10 @@ $font-color: rgba(255, 255, 255, 1);
 		position: absolute;
 		left: 0;
 		top: 0;
+
+        @media (max-width: 1024px) {
+            height: 104%;
+        }
 	}
 
     &__overlay {
@@ -214,16 +388,34 @@ $font-color: rgba(255, 255, 255, 1);
         padding: 10px;
         transition: all 0.3s ease 0.3s;
 
+        @media (max-width: 767px) {
+            display: none;
+        }
+
         &-text {
             @include font(24px, 28px, 900, $font-color, $font-title);
             margin-bottom: 20px;
             text-transform: uppercase;
+
+            @media (max-width: 767px) {
+                padding: 2px 0;
+                margin-bottom: 4.5px;
+            }
+
+            @media (max-width: 321px) {
+                padding: 2px 0;
+                margin-bottom: 4.5px;
+            }
             
         }
     
         &-desc {
             @include font(18px, 21px, 400, $font-color, $font-title);
             text-transform: capitalize;
+
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
 
         &:hover {
@@ -243,19 +435,70 @@ $font-color: rgba(255, 255, 255, 1);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
+
+    @media (max-width: 1024px) {
+        column-gap: 25px;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    @media (max-width: 321px) {
+        display: block;
+    }
 }
 
 .team {
     margin-bottom: 114px;
 
+    @media (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 35px;
+    }
+
+    @media (max-width: 321px) {
+        margin-bottom: 35px;
+    }
+
     .container {
         @extend %team__container;
+    }
+
+    &__content {
+        @media (max-width: 767px) {
+            &:last-child {
+                margin:0;
+            }
+        }
+
+        @media (max-width: 321px) {
+            max-width: 280px;
+            margin-bottom: 56px;
+
+            &:last-child {
+                margin:0;
+            }
+        }
     }
 
     &__wrapper-img {
         position: relative;
 		padding-top: 100%;
         margin-bottom: 30px;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 321px) {
+            padding-top: 79%;
+            margin-bottom: 28px;
+        }
     }
 
     &__img {
@@ -265,29 +508,82 @@ $font-color: rgba(255, 255, 255, 1);
 		position: absolute;
 		left: 0;
 		top: 0;
+
+        @media (max-width: 1024px) {
+            height: 100%;
+        }
+
+        @media (max-width: 321px) {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     &__name {
         @include font(24px, 28px, 700, rgba(45, 48, 51, 1), $font-title);
         padding: 0 1px;
         margin-bottom: 5px;
+
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
 
     &__developer {
         @include font(18px, 21px, 400, rgba(255, 67, 67, 1), $font-title);
         text-transform: uppercase;
         margin-bottom: 18px;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 38.5px;
+        }
+
+        @media (max-width: 321px) {
+            margin-bottom: 38.5px;
+        }
     }
 
     &__text {
         @include font(18px, 21px, 400, rgba(108, 114, 121, 1), $font-title);
         margin-bottom: 38px;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 55px;
+        }
+
+        @media (max-width: 321px) {
+            margin-bottom: 55px;
+        }
     }
 
     &__icons {
         display: flex;
         column-gap: 6px;
         transition: all 0.3s ease 0.3s;
+
+        @media (max-width: 1024px) {
+            column-gap: 4px;
+        }
+
+        @media (max-width: 767px) {
+            column-gap: 6px;
+        }
+
+        @media (max-width: 321px) {
+            column-gap: 6px;
+        }
 
     }
 
@@ -299,6 +595,21 @@ $font-color: rgba(255, 255, 255, 1);
         justify-content: center;
         border: 1px solid rgba(198, 203, 205, 1);
         transition: all 0.3s ease 0.3s;
+
+        @media (max-width: 1024px) {
+            width: 34px;
+            height: 34px;
+        }
+
+        @media (max-width: 767px) {
+            width: 39px;
+            height: 39px;
+        }
+
+        @media (max-width: 321px) {
+            width: 39.5px;
+            height: 39.5px;
+        }
 
 
         &:hover path{
@@ -318,6 +629,18 @@ $font-color: rgba(255, 255, 255, 1);
 .designer {
     margin: 0 auto 174px;
 
+    @media (max-width: 1024px) {
+        margin: 0 auto 125px;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 34.5px;
+    }
+
+    @media (max-width: 321px) {
+        margin-bottom: 34.5px;
+    }
+
     &__container {
         display: flex;
         background-color: rgba(92, 50, 73, 1);
@@ -327,6 +650,14 @@ $font-color: rgba(255, 255, 255, 1);
     &__wrapper-img {
         width: 49%;
         overflow: hidden;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        @media (max-width: 321px) {
+            width: 100%;
+        }
     }
 
     &__tab-img {
@@ -341,6 +672,20 @@ $font-color: rgba(255, 255, 255, 1);
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media (max-width: 1024px) {
+            padding: 31px 10px 58px 87px;
+        }
+
+        @media (max-width: 767px) {
+            padding: 10px 10px 70px 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 321px) {
+            padding: 10px 10px 10px 20px;
+            width: 100%;
+        }
     }
 
     &__text {
@@ -349,12 +694,48 @@ $font-color: rgba(255, 255, 255, 1);
         text-transform: capitalize;
         margin-bottom: 37px;
         max-width: 471px;
+
+        @media (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 32px;
+            max-width: 330px;
+        }
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 321px) {
+            padding: 18px 0;
+        }
     }
 
     &__desc {
         @include font(13px, 15px, 700, $font-color, $font-title);
         text-transform: uppercase;
         max-width: 470px;
+
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+            max-width: 330px;
+        }
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        &__slides {
+            @media (max-width: 767px) {
+                column-gap: 20.5px;
+            }
+
+            @media (max-width: 321px) {
+                column-gap: 20.5px;
+            }
+        }
     }
 
     .swiper {
@@ -388,6 +769,16 @@ $font-color: rgba(255, 255, 255, 1);
     }
 }
 
+%designer__container {
+    @media (max-width: 767px) {
+        margin-bottom: 23px;
+    }
+
+    @media (max-width: 321px) {
+        display: block;
+        margin-bottom: 23px;
+    }
+}
 
 %download__container {
     text-align: center;
@@ -396,6 +787,18 @@ $font-color: rgba(255, 255, 255, 1);
 .download {
     margin-bottom: 114px;
 
+    @media (max-width: 1024px) {
+        margin-bottom: 81px;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 45px;
+    }
+
+    @media (max-width: 321px) {
+        margin-bottom: 45px;
+    }
+
     .container {
         @extend %download__container;
     }
@@ -403,11 +806,46 @@ $font-color: rgba(255, 255, 255, 1);
     &__title {
         @include font(30px, 35px, 500, rgba(0, 0, 0, 1), $font-title);
         margin-bottom: 23px;
+
+        @media (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 29px;
+        }
+
+        @media (max-width: 321px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
 
     &__text {
         @include font(21px, 21px, 700, rgba(0, 0, 0, 1), $font-title);
         margin-bottom: 48px;
+
+        @media (max-width: 1024px) {
+            font-size: 16px;
+            line-height: 16px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 11px;
+        }
+
+        @media (max-width: 321px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 11px;
+        }
     }
 
     &__button {
@@ -420,6 +858,21 @@ $font-color: rgba(255, 255, 255, 1);
         border: none;
         cursor: pointer;
         transition: all 0.3s ease 0.3s;
+
+        @media (max-width: 1024px) {
+            max-width: 314px;
+            font-size: 18px;
+            line-height: 19px;
+            padding: 27px 0;
+        }
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+
+        @media (max-width: 321px) {
+            max-width: 279px;
+        }
 
         &:hover {
             background-color: rgba(231, 20, 20, 1);
@@ -438,11 +891,34 @@ $font-color: rgba(255, 255, 255, 1);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+
+    @media (max-width: 1024px) {
+        grid-gap: 20px;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 321px) {
+        grid-gap: 10px;
+        padding: 41px 3px;
+    }
 }
 
 .footer {
     background-color: rgba(53, 60, 101, 1);
     padding-top: 71px;
+
+    @media (max-width: 767px) {
+        padding: 29px 0 0;
+    }
+
+    @media (max-width: 321px) {
+        padding: 29px 0;
+    }
 
     .container {
         @extend %footer__container;
@@ -453,11 +929,23 @@ $font-color: rgba(255, 255, 255, 1);
         @include font(18px, 21px, 700, $font-color, $font-title);
         text-transform: uppercase;
         margin-bottom: 29px;
+        
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 18px;
+        }
+
     }
 
     &__text {
         @include font(18px, 21px, 400, $font-color, $font-title);
         text-align: center;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__icons {
@@ -466,6 +954,11 @@ $font-color: rgba(255, 255, 255, 1);
         justify-content: center;
         margin-top: 49px;
         transition: all 0.3s ease 0.3s;
+
+        @media (max-width: 1024px) {
+            column-gap: 23px;
+            margin-top: 32px;
+        }
 
 }
 
@@ -477,6 +970,11 @@ $font-color: rgba(255, 255, 255, 1);
         justify-content: center;
         border: 1px solid rgba(198, 203, 205, 1);
         transition: all 0.3s ease 0.3s;
+
+        @media (max-width: 1024px) {
+            width: 33px;
+            height: 33px;
+        }
 
         &:hover path{
             fill: #EC7979;
@@ -494,12 +992,21 @@ $font-color: rgba(255, 255, 255, 1);
         background-color: rgba(44, 49, 84, 1);
         padding: 24px 0;
 
+        @media (max-width: 1024px) {
+            padding: 14px 0;
+        }
+
     }
 
     &__copyright_text {
         @include font(18px, 18px, 400, rgba(108, 114, 121, 1), $font-title);
         text-align: center;
         text-transform: capitalize;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__copyright_desc {
@@ -510,606 +1017,13 @@ $font-color: rgba(255, 255, 255, 1);
         max-width: 390px;
         margin: 0 auto;
         padding: 0 15px;
-    }
-}
 
-
-
-
-@media (max-width: 1024px) {
-    .header__logo {
-        min-width: 193px;
-        display: flex;
-    }
-
-    .header__logo svg {
-        width: 100%;
-    }
-
-    .header .nav__link {
-        min-width: 112px;
-        padding: 44px 4px 38.5px;
-    }
-
-    .banner {
-        padding: 246px 0 85px;
-
-        &__title {
-            font-size: 48px;
-            line-height: 67px;
-            margin-bottom: 47px;
-        }
-
-        &__text {
-            font-size: 18px;
-            line-height: 24px;
-            margin-bottom: 48px;
-        }
-
-        &__button {
-            max-width: 315px;
-        }
-
-
-    }
-
-
-    .features {
-        margin-bottom: 80px;
-
-        &__content-icon {
-            width: 85px;
-            height: 85px;
-        }
-
-        &__content-text {
-            font-size: 18px;
-            line-height: 21px;
-            margin-bottom: 21px;
-        }
-
-        &__content-desc {
-            font-size: 14px;
-            line-height: 16px;
-        }
-    }
-
-    .features .container {
-        grid-column-gap: 20px;
-        grid-row-gap: 50px;
-    }
-
-
-    .work {
-        margin-bottom: 88px;
-
-        &__img {
-            height: 104%;
-        }
-    }
-
-    .team {
-        margin-bottom: 78px;
-
-        &__wrapper-img {
-            margin-bottom: 25px;
-        }
-
-        &__img {
-            height: 100%;
-        }
-
-        &__name {
-            font-size: 18px;
-            line-height: 21px;
-        }
-
-        &__developer {
-            font-size: 14px;
-            line-height: 16px;
-            margin-bottom: 22px;
-        }
-
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-        }
-
-        &__icons {
-            column-gap: 4px;
-        }
-
-        &__icon {
-            width: 34px;
-            height: 34px;
-        }
-    }
-
-    .team .container {
-        column-gap: 25px;
-    }
-
-    .designer {
-        margin: 0 auto 125px;
-
-        &__content {
-            padding: 31px 10px 58px 87px;
-        }
-
-        &__text {
-            font-size: 24px;
-            line-height: 32px;
-            max-width: 330px;
-        }
-
-        &__desc {
-            font-size: 12px;
-            line-height: 14px;
-            max-width: 330px;
-        }
-    }
-
-
-    .download {
-        margin-bottom: 81px;
-
-        &__title {
-            font-size: 24px;
-            line-height: 28px;
-            margin-bottom: 22px;
-        }
-
-        &__text {
-            font-size: 16px;
-            line-height: 16px;
-            margin-bottom: 48px;
-        }
-
-        &__button {
-            max-width: 314px;
-            font-size: 18px;
-            line-height: 19px;
-            padding: 27px 0;
-        }
-    }
-
-    .footer .container {
-        grid-gap: 20px;
-    }
-
-    .footer {
-
-        &__title {
-            font-size: 14px;
-            line-height: 16px;
-            margin-bottom: 18px;
-        }
-
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-        }
-
-        &__icons {
-            column-gap: 23px;
-            margin-top: 32px;
-        }
-
-        &__icon {
-            width: 33px;
-            height: 33px;
-    
-        }
-
-        &__copyright {
-            padding: 14px 0;
-        }
-
-        &__copyright_text {
-            font-size: 14px;
-            line-height: 16px;
-        }
-
-    }
-}
-
-@media (max-width: 767px) {
-    
-    a.nav__link {
-        display: block;
-    }
-
-    %header__container {
-        border: none;
-    }
-
-    .header {
-        padding: 10px 0;
-    }
-    .header .nav__link {
-        padding: 0;
-        min-width: max-content;
-        border: none;
-        display: none;
-    }
-
-    .banner {
-        padding: 98px 0 52px;
-        margin-bottom: 40px;
-
-        &__title {
-            font-size: 24px;
-            line-height: 42px;
-            margin-bottom: 32px;
-        }
-
-        &__text {
-            font-size: 14px;
-            line-height: 16px;
-        }
-
-        &__button {
-            max-width: 100%;
-            padding: 16px 0;
-        }
-
-    }
-
-    %features__container {
-        grid-template-columns: 1fr;
-        grid-row-gap: 41px;
-    }
-
-    .features {
-        margin-bottom: 35px;
-
-        &__content-icon {
-            width: 75px;
-            height: 74px;
-            margin: 0 auto 22px;
-        }
-
-        &__content-text {
-            margin-bottom: 16px;
-        }
-    }
-
-    .work {
-        grid-template-columns: 1fr 1fr;
-        margin-bottom: 35px;
-
-        &__overlay-text {
-            padding: 2px 0;
-            margin-bottom: 4.5px;
-        }
-
-        &__overlay-desc{
-            text-align: center;
-        }
-    }
-
-    img.work__img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .work__overlay {
-        display: none;
-    }
-
-    %team__container {
-        grid-template-columns: 1fr;
-        row-gap: 50px;
-    }
-
-    .team {
-        margin-bottom: 35px;
-
-        &__content {
-
-            &:last-child {
-                margin:0;
+        @media (max-width: 767px) {
+                max-width: 100%;
             }
-        }
-
-
-        &__developer {
-            margin-bottom: 38.5px;
-        }
-
-        &__text {
-            margin-bottom: 55px;
-        }
         
-
-        &__icons {
-            column-gap: 6px;
-        }
-
-        &__icon {
-            width: 39px;
-            height: 39px;
         }
     }
-
-    .designer {
-        margin-bottom: 34.5px;
-
-        &__wrapper-img {
-            width: 100%;
-        }
-
-        &__content {
-            padding: 10px 10px 70px 20px;
-            width: 100%;
-        }
-
-        &__text {
-            max-width: 100%;
-            text-align: center;
-        }
-
-        &__desc {
-            max-width: 100%;
-            text-align: center;
-        }
-
-        &__slides {
-            column-gap: 20.5px;
-        }
-    }
-
-    %designer__container {
-        margin-bottom: 23px;
-    }
-
-    .download {
-        margin-bottom: 45px;
-
-        &__title {
-            font-size: 18px;
-            line-height: 21px;
-            margin-bottom: 29px;
-        }
-
-        &__text {
-            font-size: 13px;
-            line-height: 15px;
-            margin-bottom: 11px;
-        }
-
-        &__button {
-            max-width: 100%;
-        }
-    }
-
-    .location {
-        padding: 34px 20px 33px;
-
-        &__content {
-            margin-bottom: 69px;
-            text-align: center;
-
-            &:last-child {
-                margin: 0;
-            }
-        }
-
-        &__title {
-            margin-bottom: 34px;
-        }
-
-        &__icons {
-            justify-self: center;
-            column-gap: 17px;
-        }
-    
-    }
-
-    .footer {
-        padding: 29px 0 0;
-    }
-
-    .footer .container {
-        grid-template-columns: 1fr;
-        row-gap: 40px;
-        margin-bottom: 40px;
-    }
-
-    .copyright__container {
-        max-width: 100%;
-    }
-
-}
-
-@media (max-width: 321px) {
-    
-    .header__logo {
-        max-width: 103px;
-    }
-
-    .header__logo svg {
-        width: 60%;
-    }
-
-    .nav__link {
-        display: none;
-    }
-
-    .banner {
-
-        &__title {
-            font-size: 36px;
-            line-height: 42px;
-            margin-bottom: 32px;
-        }
-
-        &__button {
-            max-width: 100%;
-            padding: 16px 0;
-        }
-
-    }
-
-    .features {
-        margin-bottom: 88px;
-
-        &__content-icon {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 22px;
-        }
-
-        &__content-text {
-            padding: 16px 0;
-            margin: 0;
-        }
-    }
-
-    .work {
-        grid-template-columns: 160px 160px;
-        grid-template-rows: 144px 144px;
-        margin-bottom: 35px;
-
-        &__overlay-text {
-            padding: 2px 0;
-            margin-bottom: 4.5px;
-        }
-    }
-
-    img.work__img,
-    .work__overlay {
-        width: 97%;
-        height: 95%;
-    }
-
-    .team {
-        margin-bottom: 35px;
-
-        &__content {
-            max-width: 280px;
-            margin-bottom: 56px;
-
-            &:last-child {
-                margin:0;
-            }
-        }
-        &__wrapper-img {
-            padding-top: 79%;
-            margin-bottom: 28px;
-        }
-
-        &__img  {
-            height: 100%;
-            width: 100%;
-        }
-
-        &__developer {
-            margin-bottom: 38.5px;
-        }
-
-        &__text {
-            margin-bottom: 55px;
-        }
-
-        &__icons {
-            column-gap: 6px;
-        }
-
-        &__icon {
-            width: 39.5px;
-            height: 39.5px;
-        }
-    }
-
-    %team__container {
-        display: block;
-    }
-
-    .designer {
-        margin-bottom: 34.5px;
-
-        &__wrapper-img {
-            width: 100%;
-        }
-
-        &__content {
-            padding: 10px 10px 10px 20px;
-            width: 100%;
-        }
-
-        &__text {
-            padding: 18px 0;
-        }
-        
-
-        &__slides {
-            column-gap: 20.5px;
-        }
-    }
-
-    .designer__container {
-        display: block;
-        margin-bottom: 23px;
-    }
-
-    .download {
-        margin-bottom: 45px;
-
-        &__title {
-            font-size: 18px;
-            line-height: 21px;
-        }
-
-        &__text {
-            font-size: 13px;
-            line-height: 15px;
-            margin-bottom: 11px;
-        }
-
-        &__button {
-            max-width: 279px;
-        }
-    }
-
-    .location {
-        padding: 34px 20px 33px;
-
-        &__content {
-            margin-bottom: 69px;
-            text-align: center;
-
-            &:last-child {
-                margin: 0;
-            }
-        }
-
-        &__title {
-            margin-bottom: 34px;
-        }
-
-        &__icons {
-            justify-self: center;
-            column-gap: 17px;
-        }
-    
-    }
-
-    %location__container {
-        display: block;
-    }
-
-    .footer {
-        padding: 29px 0;
-    }
-
-    .footer .container {
-        grid-gap: 10px;
-        padding: 41px 3px;
-    }
-
-}
-
 
 
 
