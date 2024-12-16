@@ -62,14 +62,13 @@ $font-color: rgba(255, 255, 255, 1);
                 max-width: 60%;
             }
         }
-    }
 
     &__logo {
         width: 183px;
         display: flex;
 
         @media (max-width: 1024px) {
-            min-width: 193px;
+            max-width: 103px;
             display: flex;
         }
     }
@@ -121,6 +120,7 @@ $font-color: rgba(255, 255, 255, 1);
             }
         }
     }
+}
 
 %banner__container {
     position: relative;
@@ -171,7 +171,7 @@ $font-color: rgba(255, 255, 255, 1);
         }        
 
         @media (max-width: 767px) {
-            font-size: 24px;
+            font-size: 36px;
             line-height: 42px;
             margin-bottom: 32px;
         }
@@ -645,6 +645,7 @@ $font-color: rgba(255, 255, 255, 1);
         display: flex;
         background-color: rgba(92, 50, 73, 1);
         flex-wrap: nowrap;
+        flex-direction: column;
     }
 
     &__wrapper-img {
